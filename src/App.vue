@@ -1,15 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <TasksList />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import HelloWorld from "./components/HelloWorld.vue";
+import TasksList from "./components/TasksList.vue";
 
 @Options({
   components: {
-    HelloWorld,
+    TasksList,
   },
 })
 export default class App extends Vue {}
@@ -21,7 +21,7 @@ export default class App extends Vue {}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #f5ead8;
+  margin-top: 5px;
 }
 </style>
