@@ -61,21 +61,10 @@ export default class TasksList extends Vue {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 35px;
 }
-.listContainer {
-  display: flex;
-  justify-content: center;
-}
+
 input {
   text-align: center;
-}
-.checkbox {
-  margin: 0;
-  align-self: center;
-  margin-left: 10px;
-}
-.button {
-  border: none;
-  background-color: antiquewhite;
 }
 </style>

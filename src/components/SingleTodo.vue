@@ -1,31 +1,29 @@
 <template>
-  <div class="container">
-    <div class="listContainer">
-      <p>
-        {{ singleTodo.task }}
-      </p>
-      <input
-        class="checkbox"
-        type="checkbox"
-        :checked="singleTodo.done"
-        @click="
-          () => {
-            handleChangeState();
-          }
-        "
-      />
+  <div class="taskContainer">
+    <p>
+      {{ singleTodo.task }}
+    </p>
+    <input
+      class="checkbox"
+      type="checkbox"
+      :checked="singleTodo.done"
+      @click="
+        () => {
+          handleChangeState();
+        }
+      "
+    />
 
-      <button
-        class="button"
-        @click="
-          () => {
-            handleDeleleTask();
-          }
-        "
-      >
-        X
-      </button>
-    </div>
+    <button
+      class="button"
+      @click="
+        () => {
+          handleDeleleTask();
+        }
+      "
+    >
+      ✕
+    </button>
   </div>
 </template>
 
@@ -48,15 +46,14 @@ export default class TasksList extends Vue {
 </script>
 
 <style lang="scss">
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.listContainer {
+.taskContainer {
   display: flex;
   justify-content: center;
+  p {
+    font-family: "Josefin Slab", serif;
+    font-size: 20px;
+    margin: 5px;
+  }
 }
 input {
   text-align: center;
@@ -69,5 +66,6 @@ input {
 .button {
   border: none;
   background-color: antiquewhite;
+  margin-left: 10px;
 }
 </style>
