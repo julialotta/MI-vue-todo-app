@@ -29,7 +29,6 @@ export default class TaskInput extends Vue {
   task = "";
   handleClick() {
     const id = generateId();
-    console.log(id);
     this.$emit("addTask", new NewTask(this.task, id));
     this.task = "";
   }

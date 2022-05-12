@@ -8,7 +8,11 @@
         class="checkbox"
         type="checkbox"
         :checked="singleTodo.done"
-        @click="changeState"
+        @click="
+          () => {
+            handleChangeState();
+          }
+        "
       />
 
       <button
@@ -33,8 +37,8 @@ import { Prop } from "vue-property-decorator";
 export default class TasksList extends Vue {
   @Prop() singleTodo!: NewTask;
 
-  changeState() {
-    this.singleTodo.done = !this.singleTodo.done;
+  handleChangeState() {
+    this.$emit("changeStateTask", this.singleTodo);
   }
 
   handleDeleleTask() {

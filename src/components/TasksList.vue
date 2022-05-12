@@ -3,6 +3,7 @@
     <TaskInput @addTask="handleAddTask($event)" />
     <SingleTodo
       @deleteTask="handleDeleteTask($event)"
+      @changeStateTask="handleChangeState($event)"
       v-for="t in tasks"
       :key="t.id"
       :singleTodo="t"
@@ -38,12 +39,18 @@ export default class TasksList extends Vue {
     this.service.setLocalStorage(this.tasks);
   }
 
-  handleDeleteTask(SingleTodo: NewTask) {
+  handleDeleteTask(t: NewTask) {
     for (let i = 0; i < this.tasks.length; i++) {
-      if (this.tasks[i].id === SingleTodo.id) {
+      if (this.tasks[i].id === t.id) {
         this.tasks.splice(i, 1);
       }
+      this.service.setLocalStorage(this.tasks);
     }
+  }
+
+  handleChangeState(t: NewTask) {
+    t.done = !t.done;
+    this.service.setLocalStorage(this.tasks);
   }
 }
 </script>
