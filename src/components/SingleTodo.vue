@@ -55,13 +55,14 @@ export default class TasksList extends Vue {
   justify-content: space-between;
   border: $red 0.9px solid;
   margin: 3px 0;
+  padding: 5px;
   width: 260px;
   @include for-phone-landscape-up {
     width: 300px;
   }
   p {
     font-family: "Josefin Slab", serif;
-    font-size: 20px;
+    font-size: 18px;
     margin: 5px;
   }
 }

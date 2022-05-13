@@ -2,7 +2,7 @@
   <form @submit.prevent="" class="form">
     <input
       type="text"
-      placeholder="Swim in the ocean"
+      placeholder="Swim in the ocean..."
       v-model="task"
       @keypress.enter="handleClick"
     />
@@ -53,6 +53,7 @@ input {
   width: 200px;
   font-family: "Josefin Slab", serif;
   font-weight: 600;
+  font-size: 18px;
 }
 button {
   height: 30px;
@@ -63,6 +64,7 @@ button {
   background-color: $yellow;
   font-family: "Josefin Slab", serif;
   font-weight: 600;
+  font-size: 15px;
 }
 
 button:hover {
