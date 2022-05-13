@@ -1,3 +1,7 @@
+/////////////////
+//MEDIA QUERYS//
+///////////////
+
 @mixin for-phone-landscape-up {
   @media (min-width: 650px) {
     @content;
@@ -31,3 +35,9 @@
   align-items: $ai;
   gap: $gap;
 }
+$blue: #84cdc1;
+$green: #a6c062;
+$yellow: #f0b96d;
+$orange: #f57e53;
+$red: #d95842;
+$beige: #f5ead8;

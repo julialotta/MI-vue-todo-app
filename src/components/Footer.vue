@@ -11,6 +11,7 @@ export default class Footer extends Vue {}
 </script>
 
 <style lang="scss">
+@import "../assets/styles/mixinsAndVariables";
 .footerContainer {
   position: fixed;
   margin-left: auto;
@@ -20,7 +21,7 @@ export default class Footer extends Vue {}
   right: 0;
   width: 100%;
   height: 35px;
-  background-color: #f0b96d;
+  background-color: $yellow;
 
   p {
     font-family: "Josefin Slab", serif;

@@ -1,14 +1,13 @@
 <template>
-  <div class="inputContainer">
-    <form @submit.prevent="onSubmit">
-      <input
-        type="text"
-        placeholder="Swim in the ocean"
-        v-model="task"
-        @keypress.enter="handleClick"
-      />
-    </form>
+  <form @submit.prevent="" class="form">
+    <input
+      type="text"
+      placeholder="Swim in the ocean"
+      v-model="task"
+      @keypress.enter="handleClick"
+    />
     <button
+      type="button"
       @click="
         () => {
           handleClick();
@@ -17,7 +16,7 @@
     >
       Add to bucketlist
     </button>
-  </div>
+  </form>
 </template>
 
 <script lang="ts">
@@ -32,33 +31,42 @@ export default class TaskInput extends Vue {
     this.$emit("addTask", new NewTask(this.task, id));
     this.task = "";
   }
-  onSubmit() {
-    console.log("Submitted");
-  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import "../assets/styles/mixins.scss";
+@import "../assets/styles/_mixinsAndVariables.scss";
 
-.inputContainer {
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include for-phone-landscape-up {
-    flex-direction: row;
-  }
 }
 input {
   border: none;
+  border: 0.9px solid $orange;
+  background-color: $beige;
+
+  border-radius: 5px;
   padding: 5px;
-  margin-bottom: 10px;
+  height: 30px;
+  width: 200px;
+  font-family: "Josefin Slab", serif;
+  font-weight: 600;
 }
 button {
-  margin-bottom: 10px;
-  width: 100px;
+  height: 30px;
+  margin: 10px 0;
+  width: 150px;
   border-radius: 5px;
-  border: 2px solid white;
+  border: none;
+  background-color: $yellow;
+  font-family: "Josefin Slab", serif;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+  color: white;
 }
 </style>
