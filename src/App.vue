@@ -1,27 +1,40 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <TasksList />
+  <Footer />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import HelloWorld from "./components/HelloWorld.vue";
+import TasksList from "./components/TasksList.vue";
+import Footer from "./components/Footer.vue";
 
 @Options({
   components: {
-    HelloWorld,
+    TasksList,
+    Footer,
   },
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@200;400;600&display=swap");
+@import "./assets/styles/_mixinsAndVariables.scss";
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: $beige;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+img {
+  width: 250px;
+  padding: 20px 0;
+  @include for-phone-landscape-up {
+    width: 300px;
+  }
 }
 </style>

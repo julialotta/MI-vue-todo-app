@@ -1,0 +1,43 @@
+/////////////////
+//MEDIA QUERYS//
+///////////////
+
+@mixin for-phone-landscape-up {
+  @media (min-width: 650px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+////////////
+//FLEXBOX//
+//////////
+@mixin flex($dir, $jc, $ai, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gap;
+}
+$blue: #84cdc1;
+$green: #a6c062;
+$yellow: #f0b96d;
+$orange: #f57e53;
+$red: #d95842;
+$beige: #f5ead8;
